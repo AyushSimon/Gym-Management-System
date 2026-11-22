@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="330" viewBox="0 0 1200 330" role="img" aria-labelledby="t d">
+  <title id="t">Forma modules</title>
+  <desc id="d">Five module cards: Dashboard, Members, Plans, Payments and Settings, each with an icon and a short description.</desc>
+  <defs>
+    <style>
+      .sans { font-family: 'Manrope','Inter','Segoe UI',system-ui,sans-serif; }
+      .mono { font-family: 'JetBrains Mono','Cascadia Code',Consolas,ui-monospace,monospace; }
+      .card { animation: rise 0.7s ease-out both; }
+      .c2 { animation-delay: .08s } .c3 { animation-delay: .16s } .c4 { animation-delay: .24s } .c5 { animation-delay: .32s }
+      @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+  </defs>
+  <rect width="1200" height="330" rx="24" fill="#10141C"/>
+  <rect x="1" y="1" width="1198" height="328" rx="23" fill="none" stroke="#303B4A" stroke-width="2"/>
+
+  <!-- 1 Dashboard -->
+  <g class="card" transform="translate(30 30)">
+    <rect width="214" height="270" rx="18" fill="#202936" stroke="#5EEAD4" stroke-opacity="0.6" stroke-width="1.5"/>
+    <rect x="20" y="20" width="56" height="56" rx="16" fill="#0F2A2A" stroke="#5EEAD4" stroke-opacity="0.6"/>
+    <g transform="translate(34 34)" stroke="#5EEAD4" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="0" y="0" width="12" height="16" rx="3"/><rect x="16" y="0" width="12" height="8" rx="3"/>
+      <rect x="0" y="20" width="12" height="8" rx="3"/><rect x="16" y="12" width="12" height="16" rx="3"/>
+    </g>
+    <text x="20" y="112" class="sans" font-size="21" font-weight="800" fill="#F1F5F9">Dashboard</text>
+    <text x="20" y="138" class="sans" font-size="13" fill="#94A3B8">KPI cards, growth and</text>
+    <text x="20" y="156" class="sans" font-size="13" fill="#94A3B8">distribution charts,</text>
+    <text x="20" y="174" class="sans" font-size="13" fill="#94A3B8">expirations at a glance.</text>
+    <rect x="20" y="214" width="118" height="28" rx="14" fill="#0F2A2A"/>
+    <text x="79" y="233" text-anchor="middle" class="mono" font-size="11.5" font-weight="700" fill="#5EEAD4">Recharts</text>
+  </g>
+
+  <!-- 2 Members -->
+  <g class="card c2" transform="translate(254 30)">
+    <rect width="214" height="270" rx="18" fill="#202936" stroke="#A5B4FC" stroke-opacity="0.6" stroke-width="1.5"/>
+    <rect x="20" y="20" width="56" height="56" rx="16" fill="#1B2236" stroke="#A5B4FC" stroke-opacity="0.6"/>
+    <g transform="translate(34 34)" stroke="#A5B4FC" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="10" cy="8" r="5.5"/><path d="M0 28 C0 20 20 20 20 28"/>
+      <circle cx="22" cy="10" r="4"/><path d="M22 18 C28 18 30 22 30 26"/>
+    </g>
+    <text x="20" y="112" class="sans" font-size="21" font-weight="800" fill="#F1F5F9">Members</text>
+    <text x="20" y="138" class="sans" font-size="13" fill="#94A3B8">Create, search, filter,</text>
+    <text x="20" y="156" class="sans" font-size="13" fill="#94A3B8">renew and track full</text>
+    <text x="20" y="174" class="sans" font-size="13" fill="#94A3B8">membership history.</text>
+    <rect x="20" y="214" width="128" height="28" rx="14" fill="#1B2236"/>
+    <text x="84" y="233" text-anchor="middle" class="mono" font-size="11.5" font-weight="700" fill="#A5B4FC">M-0001 · …</text>
+  </g>
+
+  <!-- 3 Plans -->
+  <g class="card c3" transform="translate(478 30)">
+    <rect width="214" height="270" rx="18" fill="#202936" stroke="#FBBF24" stroke-opacity="0.6" stroke-width="1.5"/>
+    <rect x="20" y="20" width="56" height="56" rx="16" fill="#2A2412" stroke="#FBBF24" stroke-opacity="0.6"/>
+    <g transform="translate(34 34)" stroke="#FBBF24" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 4 H18 L28 14 L18 24 H2Z" transform="translate(0 1)"/><circle cx="8" cy="11" r="2"/>
+    </g>
+    <text x="20" y="112" class="sans" font-size="21" font-weight="800" fill="#F1F5F9">Plans</text>
+    <text x="20" y="138" class="sans" font-size="13" fill="#94A3B8">Duration, price and an</text>
+    <text x="20" y="156" class="sans" font-size="13" fill="#94A3B8">active flag. Plans in use</text>
+    <text x="20" y="174" class="sans" font-size="13" fill="#94A3B8">are protected (409).</text>
+    <rect x="20" y="214" width="118" height="28" rx="14" fill="#2A2412"/>
+    <text x="79" y="233" text-anchor="middle" class="mono" font-size="11.5" font-weight="700" fill="#FBBF24">PLN-001 · …</text>
+  </g>
+
+  <!-- 4 Payments -->
+  <g class="card c4" transform="translate(702 30)">
+    <rect width="214" height="270" rx="18" fill="#202936" stroke="#34D399" stroke-opacity="0.6" stroke-width="1.5"/>
+    <rect x="20" y="20" width="56" height="56" rx="16" fill="#0F2A24" stroke="#34D399" stroke-opacity="0.6"/>
+    <g transform="translate(34 34)" stroke="#34D399" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="0" y="4" width="28" height="20" rx="4"/><path d="M0 11 H28"/><path d="M5 18 H10"/>
+    </g>
+    <text x="20" y="112" class="sans" font-size="21" font-weight="800" fill="#F1F5F9">Payments</text>
+    <text x="20" y="138" class="sans" font-size="13" fill="#94A3B8">Cash, UPI, card, bank</text>
+    <text x="20" y="156" class="sans" font-size="13" fill="#94A3B8">transfer. Record keeping</text>
+    <text x="20" y="174" class="sans" font-size="13" fill="#94A3B8">only, no real charges.</text>
+    <rect x="20" y="214" width="150" height="28" rx="14" fill="#0F2A24"/>
+    <text x="95" y="233" text-anchor="middle" class="mono" font-size="11.5" font-weight="700" fill="#34D399">paid · pending · failed</text>
+  </g>
+
+  <!-- 5 Settings -->
+  <g class="card c5" transform="translate(926 30)">
+    <rect width="244" height="270" rx="18" fill="#202936" stroke="#F87171" stroke-opacity="0.6" stroke-width="1.5"/>
+    <rect x="20" y="20" width="56" height="56" rx="16" fill="#2B1A1F" stroke="#F87171" stroke-opacity="0.6"/>
+    <g transform="translate(34 34)" stroke="#F87171" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="14" cy="14" r="4.5"/>
+      <path d="M14 1 V5 M14 23 V27 M1 14 H5 M23 14 H27 M5 5 L8 8 M20 20 L23 23 M5 23 L8 20 M20 8 L23 5"/>
+    </g>
+    <text x="20" y="112" class="sans" font-size="21" font-weight="800" fill="#F1F5F9">Settings</text>
+    <text x="20" y="138" class="sans" font-size="13" fill="#94A3B8">Gym details, dark / light</text>
+    <text x="20" y="156" class="sans" font-size="13" fill="#94A3B8">theme, page size, backend</text>
+    <text x="20" y="174" class="sans" font-size="13" fill="#94A3B8">info and JSON export.</text>
+    <rect x="20" y="214" width="118" height="28" rx="14" fill="#2B1A1F"/>
+    <text x="79" y="233" text-anchor="middle" class="mono" font-size="11.5" font-weight="700" fill="#F87171">Export JSON</text>
+  </g>
+</svg>

@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400" role="img" aria-labelledby="t d">
+  <title id="t">Request flow</title>
+  <desc id="d">A request travels from the browser through route, service and repository to a JSON file, and the response travels back.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#5EEAD4"/></marker>
+    <marker id="b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#A5B4FC"/></marker>
+    <style>
+      .sans { font-family: 'Manrope','Inter','Segoe UI',system-ui,sans-serif; }
+      .mono { font-family: 'JetBrains Mono','Cascadia Code',Consolas,ui-monospace,monospace; }
+      .go { stroke-dasharray: 7 7; animation: d 1s linear infinite; }
+      .back { stroke-dasharray: 7 7; animation: d2 1s linear infinite; }
+      @keyframes d { to { stroke-dashoffset: -14; } }
+      @keyframes d2 { to { stroke-dashoffset: 14; } }
+    </style>
+  </defs>
+  <rect width="1200" height="400" rx="24" fill="#10141C"/>
+  <rect x="1" y="1" width="1198" height="398" rx="23" fill="none" stroke="#303B4A" stroke-width="2"/>
+  <text x="600" y="46" text-anchor="middle" class="sans" font-size="26" font-weight="800" fill="#F1F5F9">Request Flow</text>
+  <text x="600" y="72" text-anchor="middle" class="mono" font-size="14" fill="#94A3B8">example · POST /api/members/M-0001/renew</text>
+
+  <g class="sans">
+    <g transform="translate(40 130)">
+      <rect width="190" height="150" rx="18" fill="#202936" stroke="#5EEAD4" stroke-opacity="0.7" stroke-width="1.5"/>
+      <rect x="18" y="18" width="40" height="40" rx="10" fill="#5EEAD4"/>
+      <path d="M28 33 H48 M28 40 H48 M28 47 H40" stroke="#10141C" stroke-width="3" stroke-linecap="round"/>
+      <text x="18" y="86" font-size="18" font-weight="700" fill="#F1F5F9">Browser</text>
+      <text x="18" y="108" class="mono" font-size="11.5" fill="#94A3B8">Axios service</text>
+      <text x="18" y="126" class="mono" font-size="11.5" fill="#94A3B8">typed with Zod</text>
+    </g>
+    <g transform="translate(290 130)">
+      <rect width="190" height="150" rx="18" fill="#1B2236" stroke="#A5B4FC" stroke-opacity="0.7" stroke-width="1.5"/>
+      <rect x="18" y="18" width="40" height="40" rx="10" fill="#A5B4FC"/>
+      <path d="M28 38 H48 M42 31 L49 38 L42 45" stroke="#10141C" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="18" y="86" font-size="18" font-weight="700" fill="#F1F5F9">Route</text>
+      <text x="18" y="108" class="mono" font-size="11.5" fill="#94A3B8">parse + validate</text>
+      <text x="18" y="126" class="mono" font-size="11.5" fill="#94A3B8">Pydantic schema</text>
+    </g>
+    <g transform="translate(540 130)">
+      <rect width="190" height="150" rx="18" fill="#1B2236" stroke="#34D399" stroke-opacity="0.7" stroke-width="1.5"/>
+      <rect x="18" y="18" width="40" height="40" rx="10" fill="#34D399"/>
+      <circle cx="38" cy="38" r="9" fill="none" stroke="#10141C" stroke-width="3"/>
+      <path d="M38 24 V28 M38 48 V52 M24 38 H28 M48 38 H52" stroke="#10141C" stroke-width="3" stroke-linecap="round"/>
+      <text x="18" y="86" font-size="18" font-weight="700" fill="#F1F5F9">Service</text>
+      <text x="18" y="108" class="mono" font-size="11.5" fill="#94A3B8">business rules</text>
+      <text x="18" y="126" class="mono" font-size="11.5" fill="#94A3B8">old period → history</text>
+    </g>
+    <g transform="translate(790 130)">
+      <rect width="190" height="150" rx="18" fill="#1B2236" stroke="#FBBF24" stroke-opacity="0.7" stroke-width="1.5"/>
+      <rect x="18" y="18" width="40" height="40" rx="10" fill="#FBBF24"/>
+      <path d="M28 34 H48 M28 42 H48 M28 50 H40" stroke="#10141C" stroke-width="3" stroke-linecap="round"/>
+      <text x="18" y="86" font-size="18" font-weight="700" fill="#F1F5F9">Repository</text>
+      <text x="18" y="108" class="mono" font-size="11.5" fill="#94A3B8">one per JSON file</text>
+      <text x="18" y="126" class="mono" font-size="11.5" fill="#94A3B8">read · write · lock</text>
+    </g>
+    <g transform="translate(1040 130)">
+      <rect width="130" height="150" rx="18" fill="#202936" stroke="#F87171" stroke-opacity="0.7" stroke-width="1.5"/>
+      <path d="M30 40 Q30 26 65 26 Q100 26 100 40 V68 Q100 82 65 82 Q30 82 30 68Z" fill="none" stroke="#F87171" stroke-width="3"/>
+      <path d="M30 40 Q30 54 65 54 Q100 54 100 40" fill="none" stroke="#F87171" stroke-width="3"/>
+      <text x="65" y="112" text-anchor="middle" font-size="16" font-weight="700" fill="#F1F5F9">JSON</text>
+      <text x="65" y="130" text-anchor="middle" class="mono" font-size="11.5" fill="#94A3B8">atomic swap</text>
+    </g>
+  </g>
+
+  <g stroke-width="3" fill="none">
+    <path class="go" d="M230 170 H286" stroke="#5EEAD4" marker-end="url(#a)"/>
+    <path class="go" d="M480 170 H536" stroke="#5EEAD4" marker-end="url(#a)"/>
+    <path class="go" d="M730 170 H786" stroke="#5EEAD4" marker-end="url(#a)"/>
+    <path class="go" d="M980 170 H1036" stroke="#5EEAD4" marker-end="url(#a)"/>
+    <path class="back" d="M1036 240 H980" stroke="#A5B4FC" marker-end="url(#b)"/>
+    <path class="back" d="M786 240 H730" stroke="#A5B4FC" marker-end="url(#b)"/>
+    <path class="back" d="M536 240 H480" stroke="#A5B4FC" marker-end="url(#b)"/>
+    <path class="back" d="M286 240 H230" stroke="#A5B4FC" marker-end="url(#b)"/>
+  </g>
+  <g class="mono" font-size="10.5" text-anchor="middle">
+    <text x="258" y="160" fill="#5EEAD4">request</text>
+    <text x="258" y="262" fill="#A5B4FC">response</text>
+  </g>
+
+  <rect x="40" y="316" width="1130" height="56" rx="14" fill="#171D27" stroke="#303B4A"/>
+  <text x="64" y="340" class="mono" font-size="12" font-weight="700" fill="#5EEAD4" letter-spacing="1.5">RULE</text>
+  <text x="64" y="360" class="sans" font-size="14.5" fill="#F1F5F9">Routes only parse and return data · services hold the rules · repositories are the only code that touches the files.</text>
+</svg>

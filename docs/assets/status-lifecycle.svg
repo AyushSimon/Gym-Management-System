@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="t d">
+  <title id="t">Membership status lifecycle</title>
+  <desc id="d">A timeline showing a membership is upcoming before its start date, active between start and end dates inclusive, and expired after the end date. Renewal moves the old period into history.</desc>
+  <defs>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#A5B4FC"/><stop offset="0.33" stop-color="#A5B4FC"/>
+      <stop offset="0.34" stop-color="#34D399"/><stop offset="0.66" stop-color="#34D399"/>
+      <stop offset="0.67" stop-color="#F87171"/><stop offset="1" stop-color="#F87171"/>
+    </linearGradient>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#FBBF24"/></marker>
+    <style>
+      .sans { font-family: 'Manrope','Inter','Segoe UI',system-ui,sans-serif; }
+      .mono { font-family: 'JetBrains Mono','Cascadia Code',Consolas,ui-monospace,monospace; }
+      .blink { animation: b 2.4s ease-in-out infinite; }
+      @keyframes b { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
+    </style>
+  </defs>
+  <rect width="1200" height="360" rx="24" fill="#10141C"/>
+  <rect x="1" y="1" width="1198" height="358" rx="23" fill="none" stroke="#303B4A" stroke-width="2"/>
+  <text x="600" y="46" text-anchor="middle" class="sans" font-size="26" font-weight="800" fill="#F1F5F9">Membership Status Lifecycle</text>
+  <text x="600" y="72" text-anchor="middle" class="sans" font-size="14" fill="#94A3B8">Derived from dates on every read · never stored, so it can never go stale</text>
+
+  <!-- track -->
+  <rect x="80" y="150" width="1040" height="18" rx="9" fill="url(#bar)" opacity="0.9"/>
+  <line x1="440" y1="130" x2="440" y2="190" stroke="#F1F5F9" stroke-width="2" stroke-dasharray="4 4"/>
+  <line x1="780" y1="130" x2="780" y2="190" stroke="#F1F5F9" stroke-width="2" stroke-dasharray="4 4"/>
+  <circle cx="440" cy="159" r="9" fill="#10141C" stroke="#F1F5F9" stroke-width="3"/>
+  <circle cx="780" cy="159" r="9" fill="#10141C" stroke="#F1F5F9" stroke-width="3"/>
+
+  <!-- state labels -->
+  <g class="sans" text-anchor="middle">
+    <rect x="150" y="96" width="200" height="34" rx="17" fill="#1B2236" stroke="#A5B4FC"/>
+    <text x="250" y="119" font-size="15" font-weight="800" fill="#A5B4FC">UPCOMING</text>
+    <rect x="510" y="96" width="200" height="34" rx="17" fill="#0F2A24" stroke="#34D399"/>
+    <text x="610" y="119" font-size="15" font-weight="800" fill="#34D399" class="blink">ACTIVE</text>
+    <rect x="850" y="96" width="200" height="34" rx="17" fill="#2B1A1F" stroke="#F87171"/>
+    <text x="950" y="119" font-size="15" font-weight="800" fill="#F87171">EXPIRED</text>
+  </g>
+
+  <!-- dates -->
+  <g class="mono" text-anchor="middle">
+    <text x="440" y="214" font-size="13" font-weight="700" fill="#F1F5F9">start_date</text>
+    <text x="780" y="214" font-size="13" font-weight="700" fill="#F1F5F9">end_date</text>
+    <text x="250" y="214" font-size="12" fill="#94A3B8">today &lt; start</text>
+    <text x="610" y="214" font-size="12" fill="#94A3B8">start ≤ today ≤ end (inclusive)</text>
+    <text x="950" y="214" font-size="12" fill="#94A3B8">today &gt; end</text>
+  </g>
+
+  <!-- formula -->
+  <rect x="80" y="244" width="500" height="80" rx="14" fill="#171D27" stroke="#5EEAD4" stroke-opacity="0.5"/>
+  <text x="100" y="270" class="mono" font-size="11.5" font-weight="700" fill="#5EEAD4" letter-spacing="1.5">DEFAULT END DATE</text>
+  <text x="100" y="298" class="mono" font-size="16" font-weight="600" fill="#F1F5F9">end = start + plan_days − 1</text>
+  <text x="100" y="316" class="sans" font-size="12" fill="#94A3B8">inclusive · overridable per member</text>
+
+  <rect x="620" y="244" width="500" height="80" rx="14" fill="#171D27" stroke="#FBBF24" stroke-opacity="0.5"/>
+  <text x="640" y="270" class="mono" font-size="11.5" font-weight="700" fill="#FBBF24" letter-spacing="1.5">RENEW</text>
+  <text x="640" y="298" class="sans" font-size="15" font-weight="600" fill="#F1F5F9">previous period → history[] · new period starts</text>
+  <text x="640" y="316" class="sans" font-size="12" fill="#94A3B8">nothing is overwritten · "expiring soon" = ends within 7 days (configurable)</text>
+</svg>

@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="t d">
+  <title id="t">Data model</title>
+  <desc id="d">Entity diagram. A membership plan has many members. A member has many payments and a history of membership periods.</desc>
+  <defs>
+    <marker id="many" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="10" markerHeight="10" orient="auto"><path d="M1 1L10 6L1 11M10 1V11" fill="none" stroke="#5EEAD4" stroke-width="1.6"/></marker>
+    <style>
+      .sans { font-family: 'Manrope','Inter','Segoe UI',system-ui,sans-serif; }
+      .mono { font-family: 'JetBrains Mono','Cascadia Code',Consolas,ui-monospace,monospace; }
+    </style>
+  </defs>
+  <rect width="1200" height="520" rx="24" fill="#10141C"/>
+  <rect x="1" y="1" width="1198" height="518" rx="23" fill="none" stroke="#303B4A" stroke-width="2"/>
+  <text x="600" y="46" text-anchor="middle" class="sans" font-size="26" font-weight="800" fill="#F1F5F9">Data Model</text>
+  <text x="600" y="72" text-anchor="middle" class="sans" font-size="14" fill="#94A3B8">Three JSON collections · membership status is derived, never stored</text>
+
+  <!-- relations -->
+  <g fill="none" stroke-width="2.5">
+    <path d="M338 270 H430" stroke="#5EEAD4" marker-end="url(#many)"/>
+    <path d="M770 270 H862" stroke="#5EEAD4" marker-end="url(#many)"/>
+  </g>
+  <g class="mono" font-size="11.5" font-weight="700" fill="#F1F5F9" text-anchor="middle">
+    <text x="384" y="254">1 : N</text>
+    <text x="816" y="254">1 : N</text>
+  </g>
+  <text x="384" y="292" text-anchor="middle" class="mono" font-size="10.5" fill="#94A3B8">plan_id</text>
+  <text x="816" y="292" text-anchor="middle" class="mono" font-size="10.5" fill="#94A3B8">member_id</text>
+
+  <!-- PLAN -->
+  <g transform="translate(40 120)" class="mono">
+    <rect width="298" height="300" rx="16" fill="#202936" stroke="#A5B4FC" stroke-opacity="0.7" stroke-width="1.5"/>
+    <path d="M0 16 a16 16 0 0 1 16 -16 H282 a16 16 0 0 1 16 16 V52 H0Z" fill="#A5B4FC"/>
+    <text x="20" y="34" class="sans" font-size="18" font-weight="800" fill="#10141C">Membership Plan</text>
+    <text x="20" y="84" font-size="13" fill="#A5B4FC" font-weight="700">PK</text><text x="56" y="84" font-size="13" fill="#F1F5F9">id</text><text x="278" y="84" text-anchor="end" font-size="12" fill="#64748B">PLN-001</text>
+    <line x1="16" y1="98" x2="282" y2="98" stroke="#303B4A"/>
+    <text x="56" y="122" font-size="13" fill="#F1F5F9">name</text><text x="278" y="122" text-anchor="end" font-size="12" fill="#64748B">string</text>
+    <line x1="16" y1="136" x2="282" y2="136" stroke="#303B4A"/>
+    <text x="56" y="160" font-size="13" fill="#F1F5F9">duration_days</text><text x="278" y="160" text-anchor="end" font-size="12" fill="#64748B">int</text>
+    <line x1="16" y1="174" x2="282" y2="174" stroke="#303B4A"/>
+    <text x="56" y="198" font-size="13" fill="#F1F5F9">price</text><text x="278" y="198" text-anchor="end" font-size="12" fill="#64748B">number</text>
+    <line x1="16" y1="212" x2="282" y2="212" stroke="#303B4A"/>
+    <text x="56" y="236" font-size="13" fill="#F1F5F9">description</text><text x="278" y="236" text-anchor="end" font-size="12" fill="#64748B">string</text>
+    <line x1="16" y1="250" x2="282" y2="250" stroke="#303B4A"/>
+    <text x="56" y="274" font-size="13" fill="#F1F5F9">active</text><text x="278" y="274" text-anchor="end" font-size="12" fill="#64748B">bool</text>
+  </g>
+
+  <!-- MEMBER -->
+  <g transform="translate(430 100)" class="mono">
+    <rect width="340" height="360" rx="16" fill="#202936" stroke="#5EEAD4" stroke-opacity="0.7" stroke-width="1.5"/>
+    <path d="M0 16 a16 16 0 0 1 16 -16 H324 a16 16 0 0 1 16 16 V52 H0Z" fill="#5EEAD4"/>
+    <text x="20" y="34" class="sans" font-size="18" font-weight="800" fill="#10141C">Member</text>
+    <text x="20" y="84" font-size="13" fill="#5EEAD4" font-weight="700">PK</text><text x="56" y="84" font-size="13" fill="#F1F5F9">id</text><text x="320" y="84" text-anchor="end" font-size="12" fill="#64748B">M-0001</text>
+    <line x1="16" y1="98" x2="324" y2="98" stroke="#303B4A"/>
+    <text x="56" y="122" font-size="13" fill="#F1F5F9">full_name</text><text x="320" y="122" text-anchor="end" font-size="12" fill="#64748B">string</text>
+    <line x1="16" y1="136" x2="324" y2="136" stroke="#303B4A"/>
+    <text x="56" y="160" font-size="13" fill="#F1F5F9">age</text><text x="320" y="160" text-anchor="end" font-size="12" fill="#64748B">12 – 100</text>
+    <line x1="16" y1="174" x2="324" y2="174" stroke="#303B4A"/>
+    <text x="56" y="198" font-size="13" fill="#F1F5F9">phone</text><text x="320" y="198" text-anchor="end" font-size="12" fill="#64748B">unique · normalised</text>
+    <line x1="16" y1="212" x2="324" y2="212" stroke="#303B4A"/>
+    <text x="12" y="236" font-size="13" fill="#FBBF24" font-weight="700">FK</text><text x="56" y="236" font-size="13" fill="#F1F5F9">plan_id</text><text x="320" y="236" text-anchor="end" font-size="12" fill="#64748B">→ Plan</text>
+    <line x1="16" y1="250" x2="324" y2="250" stroke="#303B4A"/>
+    <text x="56" y="274" font-size="13" fill="#F1F5F9">start_date</text><text x="320" y="274" text-anchor="end" font-size="12" fill="#64748B">date</text>
+    <line x1="16" y1="288" x2="324" y2="288" stroke="#303B4A"/>
+    <text x="56" y="312" font-size="13" fill="#F1F5F9">end_date</text><text x="320" y="312" text-anchor="end" font-size="12" fill="#64748B">start + duration − 1</text>
+    <line x1="16" y1="326" x2="324" y2="326" stroke="#303B4A"/>
+    <text x="56" y="350" font-size="13" fill="#F1F5F9">payment_status</text><text x="320" y="350" text-anchor="end" font-size="12" fill="#64748B">paid | pending</text>
+  </g>
+
+  <!-- PAYMENT -->
+  <g transform="translate(862 120)" class="mono">
+    <rect width="298" height="300" rx="16" fill="#202936" stroke="#34D399" stroke-opacity="0.7" stroke-width="1.5"/>
+    <path d="M0 16 a16 16 0 0 1 16 -16 H282 a16 16 0 0 1 16 16 V52 H0Z" fill="#34D399"/>
+    <text x="20" y="34" class="sans" font-size="18" font-weight="800" fill="#10141C">Payment</text>
+    <text x="20" y="84" font-size="13" fill="#34D399" font-weight="700">PK</text><text x="56" y="84" font-size="13" fill="#F1F5F9">id</text>
+    <line x1="16" y1="98" x2="282" y2="98" stroke="#303B4A"/>
+    <text x="12" y="122" font-size="13" fill="#FBBF24" font-weight="700">FK</text><text x="56" y="122" font-size="13" fill="#F1F5F9">member_id</text><text x="278" y="122" text-anchor="end" font-size="12" fill="#64748B">→ Member</text>
+    <line x1="16" y1="136" x2="282" y2="136" stroke="#303B4A"/>
+    <text x="56" y="160" font-size="13" fill="#F1F5F9">amount</text><text x="278" y="160" text-anchor="end" font-size="12" fill="#64748B">&gt; 0</text>
+    <line x1="16" y1="174" x2="282" y2="174" stroke="#303B4A"/>
+    <text x="56" y="198" font-size="13" fill="#F1F5F9">payment_date</text><text x="278" y="198" text-anchor="end" font-size="12" fill="#64748B">date</text>
+    <line x1="16" y1="212" x2="282" y2="212" stroke="#303B4A"/>
+    <text x="56" y="236" font-size="13" fill="#F1F5F9">method</text><text x="278" y="236" text-anchor="end" font-size="12" fill="#64748B">cash · upi · card …</text>
+    <line x1="16" y1="250" x2="282" y2="250" stroke="#303B4A"/>
+    <text x="56" y="274" font-size="13" fill="#F1F5F9">status · notes</text><text x="278" y="274" text-anchor="end" font-size="12" fill="#64748B">paid | pending | failed</text>
+  </g>
+
+  <text x="600" y="492" text-anchor="middle" class="sans" font-size="12" fill="#94A3B8">Members also keep a history[] of past periods · deleting a member keeps their payments as history · each payment stores the member name · plans in use cannot be deleted (409)</text>
+</svg>

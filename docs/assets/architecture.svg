@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="t d">
+  <title id="t">Forma system architecture</title>
+  <desc id="d">The React single-page app calls the FastAPI backend over REST. The backend is layered into routes, services and repositories, which persist to three JSON files.</desc>
+  <defs>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5EEAD4"/><stop offset="1" stop-color="#A5B4FC"/></linearGradient>
+    <marker id="arrT" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5EEAD4"/></marker>
+    <marker id="arrI" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#A5B4FC"/></marker>
+    <style>
+      .sans { font-family: 'Manrope','Inter','Segoe UI',system-ui,sans-serif; }
+      .mono { font-family: 'JetBrains Mono','Cascadia Code',Consolas,ui-monospace,monospace; }
+      .flow { stroke-dasharray: 8 8; animation: dash 1.2s linear infinite; }
+      @keyframes dash { to { stroke-dashoffset: -16; } }
+    </style>
+  </defs>
+
+  <rect width="1200" height="620" rx="24" fill="#10141C"/>
+  <rect x="1" y="1" width="1198" height="618" rx="23" fill="none" stroke="#303B4A" stroke-width="2"/>
+  <text x="600" y="48" text-anchor="middle" class="sans" font-size="26" font-weight="800" fill="#F1F5F9">System Architecture</text>
+  <text x="600" y="74" text-anchor="middle" class="sans" font-size="14" fill="#94A3B8">One SPA, one REST API, three JSON files</text>
+
+  <!-- FRONTEND zone -->
+  <rect x="40" y="100" width="330" height="480" rx="20" fill="#171D27" stroke="#5EEAD4" stroke-opacity="0.5" stroke-width="1.5"/>
+  <text x="64" y="134" class="mono" font-size="13" font-weight="700" fill="#5EEAD4" letter-spacing="2">FRONTEND · :5173</text>
+  <text x="64" y="158" class="sans" font-size="13" fill="#94A3B8">React 18 · TypeScript · Vite</text>
+
+  <g class="sans" font-size="15" font-weight="600" fill="#F1F5F9">
+    <rect x="64" y="180" width="282" height="62" rx="12" fill="#202936" stroke="#303B4A"/>
+    <text x="84" y="208">Pages</text><text x="84" y="228" class="mono" font-size="11.5" font-weight="400" fill="#94A3B8">Dashboard · Members · Plans · Payments</text>
+    <rect x="64" y="256" width="282" height="62" rx="12" fill="#202936" stroke="#303B4A"/>
+    <text x="84" y="284">Components</text><text x="84" y="304" class="mono" font-size="11.5" font-weight="400" fill="#94A3B8">UI kit · layout · Recharts · forms</text>
+    <rect x="64" y="332" width="282" height="62" rx="12" fill="#202936" stroke="#303B4A"/>
+    <text x="84" y="360">Hooks &amp; state</text><text x="84" y="380" class="mono" font-size="11.5" font-weight="400" fill="#94A3B8">data fetching · debounce · settings</text>
+    <rect x="64" y="408" width="282" height="62" rx="12" fill="#202936" stroke="#303B4A"/>
+    <text x="84" y="436">Validation</text><text x="84" y="456" class="mono" font-size="11.5" font-weight="400" fill="#94A3B8">React Hook Form + Zod schemas</text>
+    <rect x="64" y="484" width="282" height="62" rx="12" fill="#0F2A2A" stroke="#5EEAD4" stroke-opacity="0.7"/>
+    <text x="84" y="512" fill="#5EEAD4">API services</text><text x="84" y="532" class="mono" font-size="11.5" font-weight="400" fill="#94A3B8">Axios client · one module per resource</text>
+  </g>
+
+  <!-- REST arrows -->
+  <path class="flow" d="M346 505 H470" stroke="#5EEAD4" stroke-width="3" fill="none" marker-end="url(#arrT)"/>
+  <path class="flow" d="M470 535 H346" stroke="#A5B4FC" stroke-width="3" fill="none" marker-end="url(#arrI)"/>
+  <rect x="372" y="440" width="76" height="30" rx="15" fill="#202936" stroke="#303B4A"/>
+  <text x="410" y="460" text-anchor="middle" class="mono" font-size="12" font-weight="700" fill="#F1F5F9">REST</text>
+  <text x="408" y="498" text-anchor="middle" class="mono" font-size="10.5" fill="#5EEAD4">request</text>
+  <text x="408" y="556" text-anchor="middle" class="mono" font-size="10.5" fill="#A5B4FC">JSON</text>
+
+  <!-- BACKEND zone -->
+  <rect x="470" y="100" width="420" height="480" rx="20" fill="#171D27" stroke="#A5B4FC" stroke-opacity="0.5" stroke-width="1.5"/>
+  <text x="494" y="134" class="mono" font-size="13" font-weight="700" fill="#A5B4FC" letter-spacing="2">BACKEND · :8000</text>
+  <text x="494" y="158" class="sans" font-size="13" fill="#94A3B8">FastAPI · Pydantic · Uvicorn</text>
+
+  <g class="sans" font-size="15" font-weight="600" fill="#F1F5F9">
+    <rect x="494" y="180" width="372" height="62" rx="12" fill="#202936" stroke="#303B4A"/>
+    <text x="514" y="208">app/main.py</text><text x="514" y="228" class="mono" font-size="11.5" font-weight="400" fill="#94A3B8">app factory · CORS · error handlers</text>
+
+    <rect x="494" y="256" width="372" height="62" rx="12" fill="#1B2236" stroke="#A5B4FC" stroke-opacity="0.6"/>
+    <circle cx="522" cy="287" r="14" fill="#A5B4FC"/><text x="522" y="293" text-anchor="middle" font-size="15" font-weight="800" fill="#10141C">1</text>
+    <text x="548" y="282">Routes</text><text x="548" y="302" class="mono" font-size="11.5" font-weight="400" fill="#94A3B8">HTTP in / out · no business logic</text>
+
+    <rect x="494" y="332" width="372" height="62" rx="12" fill="#1B2236" stroke="#A5B4FC" stroke-opacity="0.6"/>
+    <circle cx="522" cy="363" r="14" fill="#A5B4FC"/><text x="522" y="369" text-anchor="middle" font-size="15" font-weight="800" fill="#10141C">2</text>
+    <text x="548" y="358">Services</text><text x="548" y="378" class="mono" font-size="11.5" font-weight="400" fill="#94A3B8">status · dates · references · statistics</text>
+
+    <rect x="494" y="408" width="372" height="62" rx="12" fill="#1B2236" stroke="#A5B4FC" stroke-opacity="0.6"/>
+    <circle cx="522" cy="439" r="14" fill="#A5B4FC"/><text x="522" y="445" text-anchor="middle" font-size="15" font-weight="800" fill="#10141C">3</text>
+    <text x="548" y="434">Repositories</text><text x="548" y="454" class="mono" font-size="11.5" font-weight="400" fill="#94A3B8">only layer that touches the files</text>
+
+    <rect x="494" y="484" width="372" height="62" rx="12" fill="#202936" stroke="#303B4A"/>
+    <text x="514" y="512">file_handler.py</text><text x="514" y="532" class="mono" font-size="11.5" font-weight="400" fill="#94A3B8">atomic write · fsync · os.replace · locks</text>
+  </g>
+  <path d="M680 318 V332 M680 394 V408 M680 470 V484" stroke="#A5B4FC" stroke-width="2" marker-end="url(#arrI)"/>
+
+  <!-- storage arrow -->
+  <path class="flow" d="M866 515 H950" stroke="#FBBF24" stroke-width="3" fill="none"/>
+  <path d="M944 508 L956 515 L944 522z" fill="#FBBF24"/>
+
+  <!-- STORAGE zone -->
+  <rect x="950" y="100" width="210" height="480" rx="20" fill="#171D27" stroke="#FBBF24" stroke-opacity="0.5" stroke-width="1.5"/>
+  <text x="974" y="134" class="mono" font-size="13" font-weight="700" fill="#FBBF24" letter-spacing="2">STORAGE</text>
+  <text x="974" y="158" class="sans" font-size="13" fill="#94A3B8">backend/app/data/</text>
+
+  <g class="mono" font-size="13" font-weight="600">
+    <g transform="translate(974 190)">
+      <path d="M0 14 Q0 0 80 0 Q160 0 160 14 V46 Q160 60 80 60 Q0 60 0 46Z" fill="#202936" stroke="#FBBF24" stroke-opacity="0.7"/>
+      <path d="M0 14 Q0 28 80 28 Q160 28 160 14" fill="none" stroke="#FBBF24" stroke-opacity="0.7"/>
+      <text x="80" y="50" text-anchor="middle" fill="#F1F5F9">members.json</text>
+    </g>
+    <g transform="translate(974 280)">
+      <path d="M0 14 Q0 0 80 0 Q160 0 160 14 V46 Q160 60 80 60 Q0 60 0 46Z" fill="#202936" stroke="#FBBF24" stroke-opacity="0.7"/>
+      <path d="M0 14 Q0 28 80 28 Q160 28 160 14" fill="none" stroke="#FBBF24" stroke-opacity="0.7"/>
+      <text x="80" y="50" text-anchor="middle" fill="#F1F5F9">memberships.json</text>
+    </g>
+    <g transform="translate(974 370)">
+      <path d="M0 14 Q0 0 80 0 Q160 0 160 14 V46 Q160 60 80 60 Q0 60 0 46Z" fill="#202936" stroke="#FBBF24" stroke-opacity="0.7"/>
+      <path d="M0 14 Q0 28 80 28 Q160 28 160 14" fill="none" stroke="#FBBF24" stroke-opacity="0.7"/>
+      <text x="80" y="50" text-anchor="middle" fill="#F1F5F9">payments.json</text>
+    </g>
+  </g>
+  <text x="1055" y="470" text-anchor="middle" class="sans" font-size="12" fill="#94A3B8">Survives restarts.</text>
+  <text x="1055" y="488" text-anchor="middle" class="sans" font-size="12" fill="#94A3B8">Corrupt files are moved</text>
+  <text x="1055" y="506" text-anchor="middle" class="sans" font-size="12" fill="#94A3B8">aside, never lost.</text>
+</svg>
