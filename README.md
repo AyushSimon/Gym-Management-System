@@ -174,13 +174,9 @@ gym-management-system/
 
 Double-click **`run.bat`** in the project root, or run it from a terminal.
 
-On first run it creates the backend virtual environment, installs backend and frontend dependencies, starts both servers in two windows and opens **http://localhost:5173**. Close the two windows to stop them.
+The launcher checks Python and Node.js, installs missing dependencies, starts both servers, waits for the backend health endpoint and frontend page, and then opens the app. It picks free local ports and prints the frontend and API URLs, so another program using the usual ports cannot redirect the app to the wrong server. Close the **Gym Backend** and **Gym Frontend** windows to stop them.
 
-| Service | URL |
-| :-- | :-- |
-| 🖥️ Frontend | http://localhost:5173 |
-| ⚙️ Backend API | http://localhost:8000 |
-| 📘 Swagger UI | http://localhost:8000/docs |
+The frontend's default API URL is `http://localhost:8000`. At launch, the script selects free local ports and sets `VITE_API_BASE_URL` and the backend CORS origin to match.
 
 ### 📋 Requirements
 
