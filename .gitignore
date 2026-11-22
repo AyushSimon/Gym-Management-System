@@ -1,0 +1,29 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+dist/
+*.tsbuildinfo
+npm-debug.log*
+
+# Environment files (keep the *.example templates)
+.env
+.env.*
+!.env.example
+
+# Storage artefacts
+*.tmp
+*.corrupt-*
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

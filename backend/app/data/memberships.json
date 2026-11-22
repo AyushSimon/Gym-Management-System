@@ -1,0 +1,47 @@
+[
+  {
+    "id": "PLN-001",
+    "name": "Monthly",
+    "duration_days": 30,
+    "price": 1500.0,
+    "description": "Full gym access for one month.",
+    "is_active": true,
+    "created_at": "2026-04-26T10:30:00+00:00"
+  },
+  {
+    "id": "PLN-002",
+    "name": "Quarterly",
+    "duration_days": 90,
+    "price": 4000.0,
+    "description": "Three months of access with one free trainer consultation.",
+    "is_active": true,
+    "created_at": "2026-04-26T10:30:00+00:00"
+  },
+  {
+    "id": "PLN-003",
+    "name": "Half-Yearly",
+    "duration_days": 180,
+    "price": 7000.0,
+    "description": "Six months of access and a fitness assessment.",
+    "is_active": true,
+    "created_at": "2026-04-26T10:30:00+00:00"
+  },
+  {
+    "id": "PLN-004",
+    "name": "Annual",
+    "duration_days": 365,
+    "price": 12000.0,
+    "description": "Twelve months of access, best value for regulars.",
+    "is_active": true,
+    "created_at": "2026-04-26T10:30:00+00:00"
+  },
+  {
+    "id": "PLN-005",
+    "name": "Student Monthly",
+    "duration_days": 30,
+    "price": 1000.0,
+    "description": "Discounted month for students with a valid ID.",
+    "is_active": true,
+    "created_at": "2026-04-26T10:30:00+00:00"
+  }
+]

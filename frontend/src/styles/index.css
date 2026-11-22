@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Semantic colour tokens (space separated RGB so Tailwind can apply alpha). */
+:root {
+  color-scheme: dark;
+  --c-canvas: 16 20 28;      /* #10141C page background      */
+  --c-base: 23 29 39;        /* #171D27 sidebar / top bar    */
+  --c-surface: 32 41 54;     /* #202936 cards                */
+  --c-elevated: 38 50 65;    /* #263241 menus, hover, inputs */
+  --c-accent: 94 234 212;    /* #5EEAD4 */
+  --c-accent2: 165 180 252;  /* #A5B4FC */
+  --c-fg: 241 245 249;       /* #F1F5F9 */
+  --c-fg2: 148 163 184;      /* #94A3B8 */
+  --c-muted: 100 116 139;    /* #64748B */
+  --c-line: 48 59 74;        /* #303B4A */
+  --c-ok: 52 211 153;        /* #34D399 */
+  --c-warn: 251 191 36;      /* #FBBF24 */
+  --c-err: 248 113 113;      /* #F87171 */
+  --c-on-accent: 16 20 28;
+  --c-backdrop: 8 11 16;
+}
+
+[data-theme='light'] {
+  color-scheme: light;
+  --c-canvas: 241 245 249;
+  --c-base: 255 255 255;
+  --c-surface: 255 255 255;
+  --c-elevated: 241 245 249;
+  --c-accent: 13 148 136;
+  --c-accent2: 79 70 229;
+  --c-fg: 15 23 42;
+  --c-fg2: 71 85 105;
+  --c-muted: 100 116 139;
+  --c-line: 226 232 240;
+  --c-ok: 5 150 105;
+  --c-warn: 180 83 9;
+  --c-err: 220 38 38;
+  --c-on-accent: 255 255 255;
+  --c-backdrop: 15 23 42;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    @apply bg-canvas font-sans text-fg antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+  }
+  ::selection {
+    background: rgb(var(--c-accent) / 0.28);
+  }
+  :focus-visible {
+    outline: 2px solid rgb(var(--c-accent));
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(var(--c-line)) transparent;
+  }
+  input[type='number']::-webkit-outer-spin-button,
+  input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+}
+
+@layer components {
+  .num {
+    @apply font-mono tabular-nums tracking-tight;
+  }
+  .eyebrow {
+    @apply text-meta font-medium uppercase tracking-wider text-muted;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+}
